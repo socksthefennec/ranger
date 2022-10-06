@@ -666,7 +666,7 @@ class KittyImageDisplayer(ImageDisplayer, FileManagerAware):
             #       the only format except raw RGB(A) bitmap that kitty understand)
             # c, r: size in cells of the viewbox
             cmds.update({'t': 't', 'f': 100, })
-            with NamedTemporaryFile(prefix='ranger_thumb_', suffix='.png', delete=False) as tmpf:
+            with NamedTemporaryFile(prefix='tty-graphics-protocol-', suffix='.png', delete=False) as tmpf:
                 image.save(tmpf, format='png', compress_level=0)
                 payload = base64.standard_b64encode(tmpf.name.encode(self.fsenc))
 
